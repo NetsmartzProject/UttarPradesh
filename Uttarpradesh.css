@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 10px;
+    font-family:'Montserrat', sans-serif ;
+    scroll-behavior: smooth;
+}
+a {
+	text-decoration: none;
+}
+/* ========================== Home Section ======================= */
+.hero_container {
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#hero {
+	background-image: url(Tajmahal.jpg);
+	background-size: cover;
+	background-position: top center;
+	position: relative;
+	z-index: -1;
+}
+#hero::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: black;
+	opacity: 0.7;
+	z-index: -1;
+}
+
+#hero h1 {
+	display: block;
+	width: fit-content;
+	font-size: 4rem;
+	position: relative;
+	color: #F4C430;
+	animation: text_reveal 0.5s ease forwards;
+	animation-delay: 1s;
+}
+#hero h1 span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 0;
+	background-color: #F4C430;
+	animation: text_reveal_box 1s ease;
+	animation-delay: 0.5s;
+}
+@keyframes text_reveal_box {
+	50% {
+		width: 100%;
+		left: 0;
+	}
+	100% {
+		width: 0;
+		left: 100%;
+	}
+}
+@keyframes text_reveal {
+	100% {
+		color: darkorange;
+	}
+}
+@keyframes text_reveal_name {
+	100% {
+		color:#F4C430;
+		font-weight: 500;
+	}
+}
+/* ================================== Food Section ========================= */
+#food{
+    background-color: rgb(228, 158, 7);
+}
+#food h1{
+    display: inline-block;
+	  width:auto;
+    padding-top: 25px;
+    padding-bottom: 25px;
+	  font-size: 4rem;
+    text-align: center;
+	  color: #c9f30e;
+	/* animation: text_reveal 0.5s ease forwards;
+	animation-delay: 1s; */
+}
+/* ================================== Tradition Section ========================= */
+#tradition{
+  background-color: rgb(106, 228, 7);
+}
+#tradition h1{
+    display: inline-block;
+    width:auto;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-size: 4rem;
+    text-align: center;
+    color: #c9f30e;
+  /* animation: text_reveal 0.5s ease forwards;
+    animation-delay: 1s; */
+}
+/* ================================== Festival Section ========================= */
+#festival{
+  background-color: rgba(190, 10, 100, 0.938);
+}
+#festival h1{
+    display: inline-block;
+    width:auto;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-size: 4rem;
+    text-align: center;
+    color: #c9f30e;
+  /* animation: text_reveal 0.5s ease forwards;
+    animation-delay: 1s; */
+}  
+/* ############################### Cards And Text Attribute ######################## */
+/* ======================= left container ======================= */
+.text_card_container{
+    padding-left: 1cm;
+    padding-right: 1cm;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+}
+.text_card_container img{
+    border-radius: 20px 20px 0 0;
+    height: 200px;
+}
+.text_card_container .text h2{
+    padding-top: 1cm;
+    font-size: 20px;
+    color: black;
+}
+/* ==================== Cards ================= */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+  background-color: red;
+  border-radius: 20px;
+  transition: 0.3s;
+  width: 40%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+}
+
+.card_text {
+  padding-left: 20px;
+  align-items: center;
+}
+/* ====================== Section Class ========================= */
+section {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: center; */
+    position: relative;
+    padding-bottom: 20px;
+    width: 100%;
+    height: 100%;
+}
+/* ====================== Navigation ======================= */
+nav{
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    height: 80px;
+    width: 100%;
+    background: #1b1b1b;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px 0 100px;
+    flex-wrap: wrap;
+}
+ .logo{
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+}
+nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li{
+  margin: 0 5px;
+}
+nav ul li a{
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+nav ul li a.active,
+nav ul li a:hover{
+  color: #111;
+  background: #fff;
+}
+nav .menu-btn i{
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"]{
+  display: none;
+}
+/* ========================= Responsive Media Query ========================== */
+@media (max-width: 1000px){
+  nav{
+    padding: 0 40px 0 50px;
+  }
+}
+@media (max-width: 900px) {
+  nav .menu-btn i{
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before{
+    content: "\f00d";
+  }
+  nav ul{
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  #click:checked ~ ul{
+    left: 0;
+  }
+  nav ul li{
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a{
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a{
+    margin-left: 0px;
+  }
+  nav ul li a.active,
+  nav ul li a:hover{
+    background: none;
+    color: cyan;
+  }
+}
